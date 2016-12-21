@@ -17,4 +17,4 @@ RUN apt-get update \
     && apt-get remove -y --auto-remove software-properties-common \
     && npm config set registry http://registry.npmjs.org/ \
     && npm config set spin false \
-    && npm install -g bower phantomjs-prebuilt
+    && npm install -g bower phantomjs-prebuilt ember-cli
