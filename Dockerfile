@@ -11,7 +11,7 @@ RUN apt-get update \
     && echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections \
     && echo "deb http://us.archive.ubuntu.com/ubuntu/ xenial multiverse" >> /etc/apt/sources.list \
     && apt-get update \
-    && apt-get install -y msitools nodejs npm gcc-6 g++-6 wine wine-gecko git hfsprogs\
+    && apt-get install -y msitools nodejs npm gcc-6 g++-6 wine wine-gecko git hfsprogs wixl \
     && ln -s /usr/bin/nodejs /usr/bin/node \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get remove -y --auto-remove software-properties-common \
