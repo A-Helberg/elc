@@ -1,0 +1,18 @@
+---
+language: node_js
+sudo: required
+
+services:
+  - docker
+
+script:
+  - docker build -t ahelberg/elc:latest .
+
+before_deploy:
+  - docker login --email=$DOCKER_HUB_EMAIL --username=$DOCKER_HUB_USERNAME --password=$DOCKER_HUB_PASSWORD
+
+deploy:
+  provider: script
+  script: docker push ahelberg/elc:latest
+  on:
+    branch: master
