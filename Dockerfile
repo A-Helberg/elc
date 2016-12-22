@@ -2,6 +2,9 @@ FROM ubuntu:16.04
 
 ENV CXX=g++-6
 
+RUN mkdir /app
+WORKDIR /app
+
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
     && apt-get install -y software-properties-common \
